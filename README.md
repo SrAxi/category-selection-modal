@@ -1,5 +1,8 @@
 # category-selection-modal
 
+## Deployed link
+[Deployed](https://category-selection-modal.vercel.app/#/)
+
 ## Project setup
 ```
 npm install
