@@ -3,19 +3,9 @@
         <v-row justify="center">
             <v-dialog
                 v-model="dialog"
-                persistent
+                :persistent="isFirstStep"
                 max-width="760"
             >
-                <template v-slot:activator="{ on, attrs }">
-                    <v-btn
-                        color="primary"
-                        dark
-                        v-bind="attrs"
-                        v-on="on"
-                    >
-                        Open Dialog
-                    </v-btn>
-                </template>
                 <template v-if="isFirstStep">
                     <CategorySelectionView :goNext="goNext" />
                 </template>

@@ -3,10 +3,44 @@
         <v-card-title class="headline justify-center">
             Congratulations!!! 🎉🎉🎉
         </v-card-title>
-        <v-card-title class="justify-center grey--text mt-0 pt-0">You won an awesome prize! Check your e-mail!</v-card-title>
-        <v-divider/>
+        <v-card-title class="justify-center grey--text mt-0 pt-0">You won an awesome prize!
+        </v-card-title>
         <v-card-text>
-
+            <v-img
+                :src="'http://img.grouponcdn.com/gpn/2DGGrsXnrgwLk5jzTQ3B/UM-720x300'"
+                class="white--text align-end"
+                gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
+                height="300px"
+            />
+        </v-card-text>
+        <v-divider />
+        <v-card-title class="headline justify-center">
+            Do you want to win another prize?
+        </v-card-title>
+        <v-card-title class="justify-center grey--text mt-0 pt-0">Simply share your favourite categories with your friends!</v-card-title>
+        <v-card-text>
+            <v-container fluid>
+                <v-row dense justify="center">
+                    <v-col
+                        v-for="social in socials"
+                        :key="social.id"
+                        :cols="social.flex"
+                    >
+                        <v-btn
+                            icon
+                            tile
+                            href="#"
+                            :title="social.title"
+                        >
+                            <v-icon
+                                x-large
+                                :color="social.color"
+                            >{{ social.icon }}
+                            </v-icon>
+                        </v-btn>
+                    </v-col>
+                </v-row>
+            </v-container>
         </v-card-text>
         <v-card-actions>
             <v-spacer></v-spacer>
@@ -30,37 +64,41 @@
             }
         },
         data: () => ({
-            cards: [
+            socials: [
                 {
                     id: 1,
-                    title: 'Things to Do Leisure',
-                    src: 'https://img.grouponcdn.com/deal/g2TEd2BCjLZcESEePbbx/81-700x420/v1/c349x211q85.jpg',
-                    flex: 4
+                    icon: 'mdi-facebook',
+                    color: 'blue darken-2',
+                    title: 'Share on Facebook',
+                    flex: 2,
                 },
                 {
                     id: 2,
-                    title: 'Things to Do Live',
-                    src: 'https://img.grouponcdn.com/deal/tWNnTNXtwDVn5gJCmpfH/uX-2048x1229.jpg/v1/c349x211q85.jpg',
-                    flex: 4
+                    icon: 'mdi-instagram',
+                    color: 'red lighten-1',
+                    title: 'Share on Instagram',
+                    flex: 2,
                 },
                 {
                     id: 3,
-                    title: 'Health Beauty Wellness',
-                    src: 'https://img.grouponcdn.com/deal/3jNspr8THLkfiXuBET2GVu9KikQw/3j-1407x844/v1/c349x211q85.jpg',
-                    flex: 4
+                    icon: 'mdi-twitter',
+                    color: 'blue lighten-1',
+                    title: 'Share on Twitter',
+                    flex: 2,
                 },
                 {
                     id: 4,
-                    title: 'Hotel',
-                    src: 'https://img.grouponcdn.com/deal/74HUxdZGKYWc6jhJwBfr/J3-3644x2186/v1/c414x250q85.jpg',
-                    flex: 4
+                    icon: 'mdi-pinterest',
+                    color: 'red lighten-1',
+                    title: 'Share on Pinterest',
+                    flex: 2,
                 },
-                { id: 5, title: 'Tours', src: 'https://cdn.vuetifyjs.com/images/cards/plane.jpg', flex: 4 },
                 {
-                    id: 6,
-                    title: 'Food & Drink',
-                    src: 'https://img.grouponcdn.com/deal/45euL5X886iVdYjQ1mzMgqzHvLBN/45-2048x1229/v1/c349x211q85.jpg',
-                    flex: 4
+                    id: 5,
+                    icon: 'mdi-snapchat',
+                    color: 'black',
+                    title: 'Share on Snapchat',
+                    flex: 2,
                 },
             ],
             grouponColor: '#53a318',
